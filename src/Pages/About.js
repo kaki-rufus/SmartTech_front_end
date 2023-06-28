@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
 import axios from 'axios';
+import { motion } from 'framer-motion';
 
 const About = () => {
 
@@ -23,20 +24,46 @@ useEffect(() => {
 }, [])
 
   return (
-    <div className='about-container'>
-      <div className='about'>
+    <motion.div className='about-container' 
+    >
+      <h2>ABOUT US</h2>
+      <motion.div className='about'
+
+        initial = {{scaleY: 0}}
+        animate = {{scaleY: 1}}
+        exit = {{scaleY: 0}}
+        transition = {{duration: 1}}
+
+
+      // animate = {{
+      //   scale: [2,1],
+      //   rotation: [90,0]
+      // }}
+      // transition = {{
+      //   duration: 1,
+      //   ease: "easeInOut"
+      // }}
+      >
       
       {about.map((abt, index) => (
-          <div className='ind-abt' key={index}>
+        <>
+        
+           <motion.div className='ind-abt' key={index}
+           whileHover={{
+            scale: 1.05,
+            transition: {duration: 0.5}
+           }}
+           >
             {/* <span></span> */}
             <img src={abt.image} alt="" className='abt-image'/>
             <h3>{abt.name}</h3>
             {/* <p>{abt.description}</p> */}
-          </div>
+          </motion.div>
+        </>
       ))}
     
-  </div>
-    </div>
+      </motion.div>
+    </motion.div>
 
   )
 }

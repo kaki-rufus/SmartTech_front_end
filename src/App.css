@@ -19,6 +19,31 @@
 
 } */
 
+.logo{
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.smt{
+  position: relative;
+  /* left: -16%; */
+  top: 4px;
+  left: -42%;
+  font-size: 20px;
+}
+
+.smta{
+  position: relative;
+  left: -15.5%;
+  top: 4px;
+  /* left: -42%; */
+  font-size: 20px;
+}
+
 .nav-bar{
   position: sticky;
   top: 0;
@@ -32,6 +57,77 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
+  
+}
+
+.nv-bar{
+  display: none;
+  transition: all 0.5s;
+}
+
+.fa fa-times .fa .fa-bars{
+  display: none;
+}
+
+@media screen and (max-width: 800px){
+  
+}
+
+@media screen and (max-width: 600px){
+  .App{
+    overflow: hidden;
+  }
+
+  .nav-bar{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 20;
+    background-color: black;
+    color: white;
+    width: 100%;
+    padding: 8px;
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .nv-bar{
+    position: absolute;
+    right: -110%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 80px;
+    background-color: rgb(38, 38, 38);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .nv-bara{
+    position: absolute;
+    right: 0%;
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    top: 80px;
+    background-color: rgb(38, 38, 38);
+    transition: all 0.5s ease-in-out;
+  }
+
+  .smt{
+    left: -30%;
+    top: 4px;
+  }
+
+  .fa-times .fa-bars{
+    position: absolute;
+    left: -100%;
+    display: none;
+  }
+
 }
 
 .active{
@@ -56,18 +152,44 @@
 }
 
 .home{
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  background-color: blue;
+  /* background-color: blue; */
 }
 
 .name-comp{
-  opacity: 1;
+  /* opacity: 1; */
   position: absolute;
+  z-index: 16;
   left: 27%;
-  top: 37%;
+  top: 27%;
   color: rgb(0, 251, 255);
   font-size: 100px;
+}
+
+@media screen and (max-width: 600px){
+  .name-comp{
+    position: absolute;
+    z-index: 16;
+    left: 25%;
+    top: 37%;
+    color: rgb(0, 251, 255);
+    font-size: 70px;
+  }
+}
+
+.name-comp-2{
+  color: rgb(0, 140, 255);
+  font-size: 23px;
+}
+
+
+/* media query for home page */
+@media screen and (max-width: 600px){
+  .name-comp-2{
+    color: rgb(255, 255, 255);
+    font-size: 30px;
+  }
 }
 
 .name-comp span{
@@ -82,19 +204,24 @@
 
 .about-container{
   background-color: rgb(146, 149, 159);
-  min-height: 100vh;
+  height: 150vh;
   max-width: 100%;
+  /* margin-top: -46px; */
 }
 
 .about{
+  position: relative;
+  top: 10%;
   min-height: 100vh;
-  max-width: 90%;
+  max-width: 80%;
   margin: 0 auto;
   /* background-color: rgb(250, 250, 250); */
   display: flex;
+  /* flex-direction: column; */
   align-items: center;
   justify-content: center;
   flex-wrap: wrap;
+  /* margin-top: 28px; */
 }
 
 .about .ind-abt{
@@ -105,6 +232,7 @@
   margin: 4px;
   /* color: rgb(0, 0, 0); */
   display: flex;
+/* flex-direction: row; */
   justify-content: center;
   align-items: center;
 }
@@ -128,6 +256,11 @@ max-height: 100%;
   max-width: 100%;
 }
 
+.abouth{
+  color: rgb(0, 0, 0);
+  background-color: rgb(235, 185, 122);
+}
+
 .about .ind-abt:hover{
   background-color: rgb(44, 65, 124);
   color: rgb(255, 255, 255);
@@ -147,8 +280,54 @@ max-height: 100%;
   object-fit: cover;
 }
 
+/* about query for about */
+@media screen and (max-width: 600px){
+
+  .about-container{
+    background-color: rgb(146, 149, 159);
+    height: 120vh;
+    max-width: 100%;
+    /* margin-top: -46px; */
+  }
+
+  .about{
+    position: relative;
+    top: 4%;
+    min-height: 100vh;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .about .ind-abt{
+    background-color: rgb(242, 241, 240);
+    height: 200px;
+    width: 230px;
+    box-shadow: 2px 2px 3px 0px black;
+    margin: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .about .ind-abt:hover{
+    background-color: rgb(44, 65, 124);
+    color: rgb(255, 255, 255);
+    cursor: pointer;
+    height: 203px;
+    width: 233px;
+    box-shadow: 2px 2px 5px 1px rgb(45, 49, 5);
+    transition: all 0.5s;
+  }
+}
+
+
 .shop{
+  /* margin-top: -40px; */
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center ;
   height: 100vh;
@@ -157,6 +336,13 @@ max-height: 100%;
   color: white;
   font-size: 100px;
 }
+
+.shoph{
+  color: aquamarine;
+  position: relative;
+  bottom: 35%;
+}
+
 .shop span{
   display: flex;
   justify-content: center;
@@ -167,17 +353,27 @@ max-height: 100%;
 .members{
   display: flex;
   justify-content: center;
+  flex-direction: row;
   flex-wrap: wrap;
   min-height: 100vh;
   max-width: 100%;
   margin: 0 auto;
-  background-color: rgb(170, 170, 170);
+  position: relative;
+  top: 10%;
+}
+
+.members-container{
+  height: 150vh;
+  width: 80%;
+  margin: auto;
+  /* background-color: rgb(170, 170, 170); */
 }
 
 .ind-member{
+  margin-top: 70px;
   margin: 20px;
-  height: 250px;
-  width: 250px;
+  height: 200px;
+  width: 200px;
   /* background-color: rgb(255, 255, 255); */
 }
 
@@ -187,6 +383,18 @@ max-height: 100%;
   color: white;
   box-shadow: 1px 2px 20px 1px rgb(98, 98, 172);
   cursor: pointer;
+}
+
+@media screen and (max-width: 600px){
+  .members-container{
+    height: 125vh;
+    width: 100%;
+    margin: auto;
+  }
+  .members{
+    position: relative;
+    top: 5%;
+  }
 }
 
 .ind-img{
@@ -209,22 +417,27 @@ max-height: 100%;
 }
 
 .contact{
-  max-height: 110vh;
+  height: 100vh;
   max-width: 100%;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(61, 45, 45);
   display: flex;
-  color: rgb(255, 248, 248);
-
+  flex-direction: column;
+  color: rgb(255, 255, 255);
+  overflow: hidden;
 }
 
 .contact .form{
-  position: fixed;
+  outline: none;
+  border-radius: 15px;
+  /* position: fixed; */
   /* left: 30%; */
-  top: 20vh;
-  margin: 5px;
+  margin-top: 3%;
+  margin-left: 10%;
+  /* margin: 5px; */
   height: 350px;
-  width: 6  00px;
-  background-color: rgb(41, 40, 40);
+  width: 700px;
+  background-color: rgb(255, 255, 255);
+  color: black;
 }
 
 .message-content{
@@ -239,4 +452,29 @@ max-height: 100%;
   height: 500px;
   width: 500px;
   /* background-color: black; */
+}
+
+@media screen and (max-width:600px){
+  .contact .form{
+    position: relative;
+    top: 10%;
+    outline: none;
+    border-radius: 15px;
+    margin-top: 3%;
+    margin-left: 18%;
+    height: 750px;
+    width: 400px;
+    background-color: rgb(255, 255, 255);
+    color: black;
+  }
+
+  .contact{
+    height: 100vh;
+    max-width: 100%;
+    background-color: rgb(61, 45, 45);
+    display: flex;
+    flex-direction: column;
+    color: rgb(255, 255, 255);
+    overflow: hidden;
+  }
 }

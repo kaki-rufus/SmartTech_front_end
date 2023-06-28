@@ -1,6 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react'
 import axios from 'axios'
+import { motion } from 'framer-motion'
 
 const Members = () => {
 
@@ -21,11 +22,19 @@ const Members = () => {
   }, []);
 
   return (
-    <div className='members'>
+    <div className='members-container'>
 
-      {/* <h1>kaki</h1> */}
+    <h2>TEAM</h2>
 
-
+    <motion.div className='members'
+        animate = {{
+          scale: [1.5,1],
+          rotation: [100,0]
+        }}
+        transition = {{
+          duration: 1,
+          ease: "circInOut"
+        }}>
       {members.map((member, index) => (
         <div className='ind-member' key={index}>
           <img src={member.image} alt="" className='ind-img'/>
@@ -38,7 +47,9 @@ const Members = () => {
         </div>
       ))}
 
+      </motion.div>
     </div>
+
   )
 }
 

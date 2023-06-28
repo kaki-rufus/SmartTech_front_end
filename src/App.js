@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import './App.css';
 import NavBar from './components/NavBar';
 import Home from './Pages/Home';
@@ -8,22 +8,26 @@ import Members from './Pages/Members';
 import Shop from './Pages/Shop';
 import Contact from './Pages/Contact';
 import axios from 'axios';
+import { AnimatePresence } from 'framer-motion';
 
 function App() {
+
+  const location = useLocation('');
+
   return (
     <div className="App">
-      <Router>
       <NavBar />
       <div className='pages'>
-      <Routes>
-          <Route exact path='/' element = {<Home />}/>
-          <Route exact path='/about' element = {<About />}/>
-          <Route exact path='/members' element = {<Members />}/>
-          <Route exact path='/shop' element = {<Shop />}/>
-          <Route exact path='/contact' element = {<Contact />}/>
-        </Routes>
+        <AnimatePresence mode='wait' >
+          <Routes location={location} key = {location.pathname}>
+              <Route exact path='/' element = {<Home />}/>
+              <Route exact path='/about' element = {<About />}/>
+              <Route exact path='/members' element = {<Members />}/>
+              <Route exact path='/shop' element = {<Shop />}/>
+              <Route exact path='/contact' element = {<Contact />}/>
+            </Routes>
+        </AnimatePresence>
       </div>
-      </Router>
 
     </div>
   );
